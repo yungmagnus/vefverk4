@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %} Jordan's Store </title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <a href="/karfa">
+        <img class="karfa" src="/static/shopping_cart_PNG66.png" alt="">Smelltu á korfuna til að sja valdar vörur</a>
+        {% if "karfa" in session: %}
+                <span> ( {{ fjoldi }} )</span>
+        {% else %}
+                <span>( 0 )</span>
+        {% endif %}
+    {% include "haus.tpl" ignore missing %}
+    <main>
+        {%block content %} {% endblock %}
+    </main>
+
+    {% include "fotur.tpl" ignore missing %}
+</body>
+</html>
